@@ -1,6 +1,6 @@
-# shared/backend-remote-state
+# s3-remote-state
 
-Set up a shared state (with Dynamo DB and S3) for use with Terraform.
+Set up a shared state with Dynamo DB and S3 for use with Terraform.
 
 ## Links 
 
