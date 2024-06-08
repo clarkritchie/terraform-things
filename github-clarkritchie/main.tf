@@ -33,5 +33,8 @@ resource "github_repository" "repo" {
     secret_scanning {
       status = "enabled"
     }
+    secret_scanning_push_protection {
+      status = "enabled"
+    }
   }
 }
