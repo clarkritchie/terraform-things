@@ -1,6 +1,6 @@
 version: 2
 updates:
   - package-ecosystem: "terraform"
-    directory: "/"
+    directory: "/github-clarkritchie"
     schedule:
       interval: "weekly"
