@@ -10,7 +10,7 @@ variable "repositories" {
     description   = string
     visibility    = string
     homepage_url  = optional(string)
-    include_pages = bool
+    include_pages = optional(bool, false)
     pages_cname   = optional(string)
     has_projects  = optional(bool, false)
   }))
