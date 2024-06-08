@@ -38,3 +38,13 @@ resource "github_repository" "repo" {
     }
   }
 }
+
+resource "github_repository_dependabot_security_updates" "dependabot" {
+  for_each = {
+    for r in var.repositories : r.name => r
+    if r.dependabot == true
+  }
+
+  repository = each.value.name
+  enabled    = true
+}

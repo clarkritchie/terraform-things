@@ -17,3 +17,7 @@ terraform import 'github_repository.repo["terraform-things"]
 terraform plan -target 'github_repository.repo["terraform-things"]'
 terraform apply -target 'github_repository.repo["terraform-things"]'
 ```
+
+## Links
+
+- [GitHub provider docs](https://registry.terraform.io/providers/integrations/github/latest/docs)

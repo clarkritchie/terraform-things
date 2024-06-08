@@ -18,5 +18,6 @@ repositories = [
     visibility    = "public"
     include_pages = true
     pages_cname   = "clark.losritchi.es"
+    dependabot    = true
   },
 ]

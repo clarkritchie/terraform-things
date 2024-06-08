@@ -13,5 +13,6 @@ variable "repositories" {
     include_pages = optional(bool, false)
     pages_cname   = optional(string)
     has_projects  = optional(bool, false)
+    dependabot    = optional(bool, false)
   }))
 }
