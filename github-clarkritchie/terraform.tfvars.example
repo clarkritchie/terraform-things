@@ -1,0 +1,22 @@
+
+repositories = [
+  {
+    name          = "terraform-things"
+    description   = "Random Terraform things"
+    visibility    = "public"
+    include_pages = false
+  },
+  {
+    name          = "clarkritchie"
+    description   = "Personal landing page on GitHub"
+    visibility    = "public"
+    include_pages = true
+  },
+  {
+    name          = "clarkritchie.github.io"
+    description   = "Personal landing page on GitHub"
+    visibility    = "public"
+    include_pages = true
+    pages_cname   = "clark.losritchi.es"
+  },
+]
