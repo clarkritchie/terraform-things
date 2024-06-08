@@ -6,13 +6,14 @@ variable "GITHUB_TOKEN" {
 
 variable "repositories" {
   type = list(object({
-    name          = string
-    description   = string
-    visibility    = string
-    homepage_url  = optional(string)
-    include_pages = optional(bool, false)
-    pages_cname   = optional(string)
-    has_projects  = optional(bool, false)
-    dependabot    = optional(bool, false)
+    name             = string
+    description      = string
+    visibility       = string
+    homepage_url     = optional(string)
+    include_pages    = optional(bool, false)
+    pages_cname      = optional(string)
+    has_projects     = optional(bool, false)
+    dependabot       = optional(bool, false)
+    main_branch_name = optional(string, "main")
   }))
 }

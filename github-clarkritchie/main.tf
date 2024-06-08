@@ -48,3 +48,12 @@ resource "github_repository_dependabot_security_updates" "dependabot" {
   repository = each.value.name
   enabled    = true
 }
+
+resource "github_branch_protection" "branch_protection" {
+  for_each = {
+    for r in var.repositories : r.name => r
+    if r.dependabot == true
+  }
+  repository_id = each.value.name
+  pattern       = each.value.main_branch_name
+}
