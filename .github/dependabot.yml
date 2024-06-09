@@ -8,3 +8,7 @@ updates:
     directory: "/s3-remote-state"
     schedule:
       interval: "weekly"
+  - package-ecosystem: "terraform"
+    directory: "/s3-static-hosting"
+    schedule:
+      interval: "weekly"
