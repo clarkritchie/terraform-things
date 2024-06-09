@@ -19,7 +19,7 @@ create_s3_objects = false
 
 If `create_s3_objects` is `true` it'll upload a simple hello world file, the contents for that are in `src/`.
 
-TODO It's not clear if AWS maybe now requires the bucket name to be the same as the FQDN?  `bucket_name` and `website_name` are sort of redundant at this moment.
+TODO It's not clear if AWS maybe now requires the bucket name to be the same as the FQDN?  This seems new ([AWS docs](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/troubleshooting-s3-bucket-website-hosting.html)).  `bucket_name` and `website_name` are sort of redundant at this moment.
 
 ## Links
 
