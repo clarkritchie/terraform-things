@@ -1,4 +1,4 @@
-# s3-static-hosting-trails
+# s3-static-hosting
 
 Create a bucket with static hosting on S3 and also create the corresponding DNS record in Route 53.
 
