@@ -1,0 +1,8 @@
+#
+# MyCompany SSH keys
+#
+# mycompany-root
+ssh-ed25519 XXXX mycompany-root
+#
+# Cool Person
+ecdsa-sha2-nistp256 XXX Cool Person

@@ -1,0 +1,27 @@
+#
+# MyCompany shell shortcuts
+#
+
+function show-all() {
+  NODES=$(docker node ls --format "{{.Hostname}}")
+  # Loop through each node
+  for NODE in $NODES
+  do
+      echo "--- $NODE ---"
+      # Get the running tasks (applications) on the current node
+      docker node ps --filter "desired-state=running" --format "table{{.Name}}" $NODE | \
+      grep -v NAME | \
+      while read -r name; do printf "%s%s\n" " * " "$name"; done
+      echo " "
+  done
+}
+export -f show-all
+
+# Put other custom bash aliases here
+alias ls='ls -la'
+alias psql='docker run --env PGHOST=${ENV}-pg-db.mycompany.app --env PGDATABASE=postgres --env PGUSER=mycompany_root  -v .:/tmp2 -it postgres bash'
+alias refresh-bashrc='aws s3 cp s3://${CONFIG_BUCKET}/bashrc . && cp .bashrc.bak .bashrc && cat bashrc >> .bashrc && rm -f bashrc && source ~/.bashrc'
+alias show-all-old='docker node ps --filter "desired-state=running" $(docker node ls -q)'
+
+alias instance-id='ec2metadata --instance-id'
+alias refresh-bashrc="aws s3 cp s3://docker-swarm-${ENV}/bashrc . && cp .bashrc.bak .bashrc; ; cat bashrc >> .bashrc; rm -f bashrc; . .bashrc"
