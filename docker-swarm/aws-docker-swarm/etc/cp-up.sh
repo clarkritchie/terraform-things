@@ -4,7 +4,7 @@
 #
 
 env=${1:-dev}
-files=("my-docker-swarm-app.yml")
+files=("docker-swarm-app-a.yml" "docker-swarm-app-b.yml")
 for f in ${files[@]}; do
  if [ -f $f ]; then
   aws s3 cp $f s3://docker-swarm-${env}/

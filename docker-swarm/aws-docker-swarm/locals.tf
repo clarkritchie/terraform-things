@@ -21,26 +21,6 @@ locals {
   #   ip_address   = "54.67.7.242"
   #   fqdn = "api-chaos.mycompany.app"
   # },
-  # {
-  #   ip_address   = "54.67.7.242"
-  #   fqdn = "milestones-chaos.mycompany.app"
-  # },
-  # {
-  #   ip_address   = "54.67.7.242"
-  #   fqdn = "yass-chaos.mycompany.app"
-  # },
-  # {
-  #   ip_address   = "13.56.203.201"
-  #   fqdn = "api-chaos.mycompany.app"
-  # },
-  # {
-  #   ip_address   = "13.56.203.201"
-  #   fqdn = "milestones-chaos.mycompany.app"
-  # },
-  # {
-  #   keip_address   = "13.56.203.201"
-  #   fqdn = "yass-chaos.mycompany.app"
-  # },
   #   ]
   ip_fqdn_tmp_1 = [
     for fqdn in local.fully_qualified_host_names : {

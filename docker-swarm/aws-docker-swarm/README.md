@@ -9,6 +9,16 @@ Creates:
 - Launches N EC2s and creates DNS names, e.g. `dev-0.mycompany.app`, `dev-1.mycompany.app`, etc.
 - Installs Docker Swarm, joins them together
 
+## The Basic Idea
+
+The basic idea here was to build out a VPC and Subnets and a bunch of EC2s that, upon boot, install Doker Swarm and join together to form a cluster.
+
+My idea was to have 4 "groups" of EC2s -- the leader, manager groups A and B and a worker group.  The thinking was that it would be easier to scale by being able to move traffic off a "group" while you resized the EC2, etc.
+
+When the leader boots, it puts important things into SSM and then when managers and workers come on-line, they retrieve that from SSM.
+
+User data has a fairly small size limit, so the startup process acually pulls down additional setup instructions from a script that is stored in a config bucket on S3.
+
 ## Shared Configs
 
 Shared configs, CI/CD outputs, etc. all live in an S3 bucket named `docker-swarm-[env]` and these are copied down on startup.
