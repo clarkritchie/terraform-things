@@ -1,0 +1,12 @@
+aws_region                   = "us-west-1"
+environment                  = "dev"
+apply_immediately            = true
+skip_final_snapshot          = true
+delete_automated_backups     = true
+deletion_protection          = true
+alarm_arn                    = "arn:aws:sns:us-west-1:000000000000:dev-alarm-topic"
+performance_insights_enabled = true
+backup_retention_period      = 7
+enhanced_monitoring          = true
+min_capacity                 = 0.5
+max_capacity                 = 6
