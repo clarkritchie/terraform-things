@@ -1,0 +1,7 @@
+aws_region = "us-west-1"
+
+emails = [
+  "me@cool.com"
+]
+
+create_detector = true
