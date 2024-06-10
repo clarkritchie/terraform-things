@@ -1,0 +1,33 @@
+aws_region  = "us-west-1"
+environment = "dev"
+key_name    = "mycompany-root"
+
+#
+# Subnets can currently only be created in the following availability zones: us-west-1a, us-west-1c
+#
+# This project must use 2 -- and only 2 -- AZs (not 1, not 3, not 4) and only 2 each of \
+# public/database/private subnets
+# If there is a need for more subnets -- e.g. 2 in each AZ -- the LB's logic will need to
+# be modified because AWS does not permit multiple subnets in the same AZ to be attached
+# to a single LB, so additional LBs will need to be created (or moved to API Gateway)
+#
+azs = ["us-west-1a", "us-west-1c"]
+
+cidr_block                  = "10.20.0.0/16"
+public_subnets              = ["10.20.10.0/24", "10.20.11.0/24"]
+database_subnets            = ["10.20.20.0/24", "10.20.21.0/24"]
+private_subnets             = ["10.20.30.0/24", "10.20.31.0/24"]
+elasticache_subnets         = ["10.20.40.0/24", "10.20.41.0/24"]
+user_data_replace_on_change = false                                                # see comment in lifecicle.ignore_changes
+alarm_arn                   = "arn:aws:sns:us-west-1:000000000000:dev-alarm-topic" # create the alarm first in aws-alarm-infrastructure
+instance_type               = "t3a.large"
+# This will launch 1 + group A + group B total EC2s, or a minimum of 3
+group_a_nodes = 1
+group_b_nodes = 1
+worker_nodes  = 0
+
+host_names = [
+  "app_a",
+  "app_b"
+]
+
