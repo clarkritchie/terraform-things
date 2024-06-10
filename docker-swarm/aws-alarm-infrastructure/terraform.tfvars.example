@@ -1,0 +1,18 @@
+aws_region = "us-west-1"
+
+environments = [
+  {
+    name : "dev",
+    emails : [
+      "me@cool.com"
+    ],
+    slack_webhook_url : "https://hooks.slack.com/services/000000000/00000000000/blahblah"
+  },
+  {
+    name : "staging",
+    emails : [
+      "me@cool.com"
+    ],
+    slack_webhook_url : "https://hooks.slack.com/services/000000000/00000000000/blahblah"
+  }
+]
