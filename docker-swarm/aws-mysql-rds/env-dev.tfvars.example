@@ -1,0 +1,8 @@
+aws_region               = "us-west-1"
+environment              = "dev"
+apply_immediately        = true
+skip_final_snapshot      = true
+delete_automated_backups = true
+deletion_protection      = false
+alarm_arn                = "arn:aws:sns:us-west-1:000000000000:dev-alarm-topic"
+db_master_username       = "root"
