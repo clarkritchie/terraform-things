@@ -1,6 +1,6 @@
 # Docker Swarm
 
-This is a past project to stand up a Docker Swarm cluster using EC2s on AWS.
+This is a sanitized copy of a past project to stand up a complete Docker Swarm environment on AWS.  It uses VPCs, ELBs, EC2s, ElastiCache for Redis, Postgres and MySQL (both Aurora Serverless V2).  CloudWatch monitors sent alarms to SNS topic(s), which were then sent to email or Slack.  This project was never truly finished, but it was entirely functional when it was put aside.
 
 - `aws-alarm-infrastructure` - Very simple SNS setup to send CloudWatch alarm notifications by email and Slack, is configurable by environment
 - `aws-docker-swarm` -- This is the "base" layer and creates a VPC, subnets and launches a variable number of EC2s that bootstrap themselves with Docker Swarm
